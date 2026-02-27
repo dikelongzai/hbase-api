@@ -50,6 +50,7 @@ public class LRUCache<K, V> {
     }
 
     private void resetKeyQueueIndex(int startIndex) {
+
         keyQueueIndex.clear();
         for (int i = startIndex; i < queue.size(); i++) {
             keyQueueIndex.put(queue.get(i).getKey(), i);
