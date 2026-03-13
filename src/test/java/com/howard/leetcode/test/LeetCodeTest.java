@@ -112,6 +112,54 @@ public class LeetCodeTest {
         Assert.assertEquals(10, ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().distributeMinCandy(testCandyDistribute3));
         char[][] testMetric = {{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}};
         Assert.assertEquals(6, ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().maximalRectangle(testMetric));
+        int[] testSum=new int[] {-5,-2,-3,-2,-1,-1,-3,4,6,0,2,3};
+        List<List<Integer>> list=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getElementsSumZero(testSum);
+        for(List<Integer> tmp:list){
+            tmp.forEach(integer -> System.out.print(integer));
+            System.out.println();
+
+        }
+        testSum=new int[] {1, 2, 3, 4, 5};
+        List<List<Integer>> listSum2=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getTwoSum(testSum,6);
+        for(List<Integer> tmp:listSum2){
+            tmp.forEach(integer -> System.out.print(integer));
+            System.out.println();
+
+        }
+        listSum2=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getTwoSumV2(testSum,6);
+        for(List<Integer> tmp:listSum2){
+            tmp.forEach(integer -> System.out.print(integer));
+            System.out.println();
+
+        }
+        listSum2=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getTwoSumV3HashMapVersion(testSum,6);
+        for(List<Integer> tmp:listSum2){
+            tmp.forEach(integer -> System.out.print(integer));
+            System.out.println();
+
+        }
+        int[] []testMetrics=new int[] []{{1,3},{2,6},{8,10},{15,18}};
+        System.out.println("--------------getMergeIntervals---------------------");
+        listSum2=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getMergeIntervalsV1False(testMetrics);
+        for(List<Integer> tmp:listSum2){
+            tmp.forEach(integer -> System.out.print(integer));
+            System.out.println();
+
+        }
+        testMetrics = new int[][]{{15, 18}, {1, 3}};
+        listSum2=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getMergeIntervalsV1False(testMetrics);
+        for(List<Integer> tmp:listSum2){
+            tmp.forEach(integer -> System.out.print(integer));
+            System.out.println();
+
+        }
+        listSum2=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getMergeIntervalsV2Fixed(testMetrics);
+        for(List<Integer> tmp:listSum2){
+            tmp.forEach(integer -> System.out.print(integer));
+            System.out.println();
+
+        }
+
     }
 
     @Test
