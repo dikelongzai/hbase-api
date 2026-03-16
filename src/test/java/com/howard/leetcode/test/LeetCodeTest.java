@@ -92,6 +92,14 @@ public class LeetCodeTest {
         Assert.assertEquals(StringLeetCode.StringLeetCodeInstance.getStringLeetCodeInstance().isMatch("aa", "*"), true);
         Assert.assertEquals(StringLeetCode.StringLeetCodeInstance.getStringLeetCodeInstance().isMatch("cb", "?a"), false);
 
+        Assert.assertEquals(StringLeetCode.StringLeetCodeInstance.getStringLeetCodeInstance().lengthOfLongestSubstringV1("abcbcabcd"), 4);
+        Assert.assertEquals(StringLeetCode.StringLeetCodeInstance.getStringLeetCodeInstance().lengthOfLongestSubstringV2SidingWindow("abcbcabcd"), 4);
+        String output = StringLeetCode.StringLeetCodeInstance.getStringLeetCodeInstance().minWindowSubstrV2SlidingWindow("ABBAAC", "ABC");
+        logger.info("minWindowSubstrV2SlidingWindow output:" + output);
+        List<Integer> list = StringLeetCode.StringLeetCodeInstance.getStringLeetCodeInstance().findAnagramsV1SlidingWindow("cbaebabacd", "abc");
+        list.forEach(integer -> logger.info("findAnagramsV1SlidingWindow" + integer + ""));
+
+
     }
 
     @Test
@@ -112,49 +120,49 @@ public class LeetCodeTest {
         Assert.assertEquals(10, ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().distributeMinCandy(testCandyDistribute3));
         char[][] testMetric = {{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}};
         Assert.assertEquals(6, ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().maximalRectangle(testMetric));
-        int[] testSum=new int[] {-5,-2,-3,-2,-1,-1,-3,4,6,0,2,3};
-        List<List<Integer>> list=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getElementsSumZero(testSum);
-        for(List<Integer> tmp:list){
+        int[] testSum = new int[]{-5, -2, -3, -2, -1, -1, -3, 4, 6, 0, 2, 3};
+        List<List<Integer>> list = ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getElementsSumZero(testSum);
+        for (List<Integer> tmp : list) {
             tmp.forEach(integer -> System.out.print(integer));
             System.out.println();
 
         }
-        testSum=new int[] {1, 2, 3, 4, 5};
-        List<List<Integer>> listSum2=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getTwoSum(testSum,6);
-        for(List<Integer> tmp:listSum2){
+        testSum = new int[]{1, 2, 3, 4, 5};
+        List<List<Integer>> listSum2 = ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getTwoSum(testSum, 6);
+        for (List<Integer> tmp : listSum2) {
             tmp.forEach(integer -> System.out.print(integer));
             System.out.println();
 
         }
-        listSum2=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getTwoSumV2(testSum,6);
-        for(List<Integer> tmp:listSum2){
+        listSum2 = ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getTwoSumV2(testSum, 6);
+        for (List<Integer> tmp : listSum2) {
             tmp.forEach(integer -> System.out.print(integer));
             System.out.println();
 
         }
-        listSum2=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getTwoSumV3HashMapVersion(testSum,6);
-        for(List<Integer> tmp:listSum2){
+        listSum2 = ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getTwoSumV3HashMapVersion(testSum, 6);
+        for (List<Integer> tmp : listSum2) {
             tmp.forEach(integer -> System.out.print(integer));
             System.out.println();
 
         }
-        int[] []testMetrics=new int[] []{{1,3},{2,6},{8,10},{15,18}};
+        int[][] testMetrics = new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         System.out.println("--------------getMergeIntervals---------------------");
-        listSum2=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getMergeIntervalsV1False(testMetrics);
-        for(List<Integer> tmp:listSum2){
+        listSum2 = ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getMergeIntervalsV1False(testMetrics);
+        for (List<Integer> tmp : listSum2) {
             tmp.forEach(integer -> System.out.print(integer));
             System.out.println();
 
         }
         testMetrics = new int[][]{{15, 18}, {1, 3}};
-        listSum2=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getMergeIntervalsV1False(testMetrics);
-        for(List<Integer> tmp:listSum2){
+        listSum2 = ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getMergeIntervalsV1False(testMetrics);
+        for (List<Integer> tmp : listSum2) {
             tmp.forEach(integer -> System.out.print(integer));
             System.out.println();
 
         }
-        listSum2=ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getMergeIntervalsV2Fixed(testMetrics);
-        for(List<Integer> tmp:listSum2){
+        listSum2 = ArrayLeetCode.ArrayLeetCodeInstance.getArrayLeetCodeInstance().getMergeIntervalsV2Fixed(testMetrics);
+        for (List<Integer> tmp : listSum2) {
             tmp.forEach(integer -> System.out.print(integer));
             System.out.println();
 
@@ -355,31 +363,33 @@ public class LeetCodeTest {
         }
 
     }
+
     @Test
-    public void testBiStackCalculate(){
-        Stack<Character> ops=new Stack<>();
-        Stack<Integer> numbers=new Stack<>();
-        BiStackCalculate biStackCalculate=new BiStackCalculate();
+    public void testBiStackCalculate() {
+        Stack<Character> ops = new Stack<>();
+        Stack<Integer> numbers = new Stack<>();
+        BiStackCalculate biStackCalculate = new BiStackCalculate();
         ops.push('/');
-        numbers.push(2);numbers.push(6);
-        Assert.assertEquals(2,numbers.size());
-        Assert.assertEquals(1,ops.size());
+        numbers.push(2);
+        numbers.push(6);
+        Assert.assertEquals(2, numbers.size());
+        Assert.assertEquals(1, ops.size());
 //        Assert.assertEquals(3,biStackCalculate.calculateSingleBiStack(ops,numbers).intValue());
 //        ops.push('+');   numbers.push(6); numbers.push(2);
 //        Assert.assertEquals(2,numbers.size());
 //        Assert.assertEquals(1,ops.size());
 //        Assert.assertEquals(8,biStackCalculate.calculateSingleBiStack(ops,numbers).intValue());
 
-        String express="5*3+5";
-        int result=biStackCalculate.calculate(express);
-        Assert.assertEquals(20,result);
-        express="5*(35+5)+2";
-        result=biStackCalculate.calculate(express);
-        Assert.assertEquals(202,result);
-        express="5*(35+5*3)+2";
+        String express = "5*3+5";
+        int result = biStackCalculate.calculate(express);
+        Assert.assertEquals(20, result);
+        express = "5*(35+5)+2";
+        result = biStackCalculate.calculate(express);
+        Assert.assertEquals(202, result);
+        express = "5*(35+5*3)+2";
 
-        result=biStackCalculate.calculate(express);
-        Assert.assertEquals(252,result);
+        result = biStackCalculate.calculate(express);
+        Assert.assertEquals(252, result);
     }
 
 }
